@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
 import { loadTodo } from '../actions'
 import TodoListComponent from '../components/TodoListComponent'
 
@@ -27,9 +26,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   console.log("+++++ TodoListContainer mapDispatchToProps")
   return {
-    onTodoClick: id => {
-      console.log("+++++ TodoListContainer mapDispatchToProps toggleTodo")
-      dispatch(toggleTodo(id))
+    updateTodo: todo => {
+      console.log("+++++ TodoListContainer mapDispatchToProps updateTodo")
+      firebaseDb.ref(`todos/${todo.key}`).update({completed: !todo.completed})
     },
     loadTodo: () => {
       console.log("+++++ TodoListContainer mapDispatchToProps loadTodo")

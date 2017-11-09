@@ -26,11 +26,3 @@ export const setVisibilityFilter = filter => {
     filter
   }
 }
-
-export const toggleTodo = key => {
-  console.log("+++++ TodoAction toggleTodo")
-  return {
-    type: 'TOGGLE_TODO',
-    key
-  }
-}

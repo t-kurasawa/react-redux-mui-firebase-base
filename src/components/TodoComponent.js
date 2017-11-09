@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import { ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
+import Toggle from 'material-ui/Toggle';
 
 console.log("+++++ TodoComponent")
 
@@ -13,11 +14,11 @@ class TodoComponent extends React.Component {
     return(
       <div>
         <ListItem
-          onTouchTap={onClick}
           style={{
             textDecoration: completed ? 'line-through' : 'none'
           }}
           primaryText={text}
+          rightToggle={<Toggle onToggle={onClick} defaultToggled={completed}/>}
         />
         <Divider />
       </div>

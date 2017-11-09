@@ -15,14 +15,6 @@ const todos = (state = [], action) => {
       }
       return [...todos]    
       
-    case 'TOGGLE_TODO':
-      console.log("+++++ reducer todos TOGGLE_TODO")
-      return state.map(todo => 
-        (todo.key === action.key) 
-          ? {...todo, completed: !todo.completed}
-          : todo
-      )
-      
     default:
       return state
   }

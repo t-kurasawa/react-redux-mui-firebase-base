@@ -10,13 +10,13 @@ console.log("+++++ TodoListComponent")
 class TodoListComponent extends React.Component {
   render(){
     console.log("+++++ TodoListComponent render")
-    const { todos, onTodoClick, loadTodo } = this.props;
+    const { todos, updateTodo, loadTodo } = this.props;
         
     return(
       <List>
         <Subheader>Todo List</Subheader>  
         {todos.map(todo => (
-          <TodoComponent key={todo.key} {...todo} onClick={() => onTodoClick(todo.key)} />
+          <TodoComponent key={todo.key} {...todo} onClick={() => updateTodo(todo)} />
         ))}
       </List>
     )
@@ -37,7 +37,7 @@ TodoListComponent.propTypes = {
       text: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  onTodoClick: PropTypes.func.isRequired,
+  updateTodo: PropTypes.func.isRequired,
   loadTodo: PropTypes.func.isRequired
 }
 
