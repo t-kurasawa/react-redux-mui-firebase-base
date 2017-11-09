@@ -45,12 +45,4 @@ class HeaderComponent extends React.Component{
   }
 }
 
-// const HeaderComponent = () => (
-//   <AppBar
-//     title="Todo"
-//     iconClassNameRight="muidocs-icon-navigation-expand-more"
-//     iconElementLeft={<HeaderIcon />}
-//   />
-// );
-
 export default HeaderComponent;

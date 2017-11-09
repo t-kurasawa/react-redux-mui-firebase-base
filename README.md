@@ -8,7 +8,7 @@
 
 ## firebase setup
 - src/firebase/config.js
-- Firebase -> Overview -> WebApp -> add Firebase
+- Firebase -> Project Overview -> WebApp -> add Firebase
 ```
 export const firebaseConfig = {
     apiKey: "your config",
@@ -18,4 +18,13 @@ export const firebaseConfig = {
     storageBucket: "your config",
     messagingSenderId: "your config"
   };
+```
+- Firebase -> Develop -> Database -> Rule -> change rule
+```
+{
+  "rules": {
+    ".read":"true",
+    ".write":"true"
+  }
+}
 ```
